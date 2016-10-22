@@ -1,0 +1,44 @@
+include _mixins/link
+include _mixins/script
+
+doctype html
+html(
+  lang='en',
+  ng-app='MaterialHeaderFooter',
+  ng-controller='MaterialHeaderFooterController as ctrl'
+)
+  head
+    title Material Header And Footer
+    meta(charset='utf-8')
+    +link('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic')
+    +link('https://fonts.googleapis.com/icon?family=Material+Icons')
+    +link('bower_components/angular-material/angular-material.css')
+    +link('MaterialHeaderFooterStyles.css')
+  body(
+    layout='column',
+    ng-cloak
+  )
+    header.md-whiteframe-2dp
+      md-toolbar.md-small-tall
+        .md-toolbar-tools
+          h1 My Awesome Header
+          span(flex)
+    main(layout='column')
+      md-content(layout-fill)
+        md-card(ng-repeat='card in ctrl.cards')
+          | {{ $index }}
+          | {{ card.title }}
+          | {{ card.text }}
+        md-toolbar.md-tall
+          .md-toolbar-tools
+            span(flex)
+            h2 My Awesome Footer
+
+    +script('bower_components/angular/angular.js')
+    +script('bower_components/angular-material/angular-material.js')
+    +script('bower_components/angular-animate/angular-animate.js')
+    +script('bower_components/angular-aria/angular-aria.js')
+
+    +script('MaterialHeaderFooter.js')
+    +script('MaterialHeaderFooterController.js')
+
