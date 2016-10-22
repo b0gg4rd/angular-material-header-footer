@@ -1,6 +1,6 @@
 # Angular Material Header And Footer
 
-An basic single application page with header and footer.
+An basic single page application with header and footer.
 
 ## Requirements
 
