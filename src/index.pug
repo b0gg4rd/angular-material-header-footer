@@ -24,10 +24,11 @@ html(
           span(flex)
     main(layout='column')
       md-content(layout-fill)
-        md-card(ng-repeat='card in ctrl.cards')
-          | {{ $index }}
-          | {{ card.title }}
-          | {{ card.text }}
+        .content
+          md-card(ng-repeat='card in ctrl.cards')
+            | {{ $index }}
+            | {{ card.title }}
+            | {{ card.text }}
         md-toolbar.md-tall
           .md-toolbar-tools
             span(flex)
